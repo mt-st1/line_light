@@ -1,9 +1,8 @@
-h1 Talk Loom
+h1 Talk Room
 
 div id="messages"
   = render @messages
-
 form
   label Say something:
   br
-  input type="text" data-behavior="room_speaker"
+  input type="text" id="message_input"

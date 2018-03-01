@@ -14,6 +14,8 @@ html
             li
               = link_to 'プロフィール編集', edit_user_registration_path
             li
+              = link_to 'トークルーム', rooms_show_path
+            li
               = link_to 'ログアウト', destroy_user_session_path, method: :delete
           - else
             li
