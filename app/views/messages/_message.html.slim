@@ -1,3 +1,8 @@
 div.message
-  p
+  a href="" class="message_username"
+    = message.user.email
+  span.message_timestamp
+    = message.created_at
+  br
+  span.message_content
     = message.content
