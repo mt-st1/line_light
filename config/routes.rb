@@ -4,4 +4,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#index'
   get 'home', to: 'static_pages#home'
+  get 'follow', to: 'static_pages#follow'
+  post 'follow', to: 'static_pages#follow'
+  # resources :users do
+  #   member do
+  #     get :friends
+  #   end
+  # end
+  resources :friends, only: [:create, :destroy]
 end

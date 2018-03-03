@@ -12,6 +12,10 @@ html
         ul
           - if user_signed_in?
             li
+              = link_to 'ホーム', home_path
+            li
+              = link_to '友達フォロー', follow_path
+            li
               = link_to 'プロフィール編集', edit_user_registration_path
             li
               = link_to 'トークルーム', rooms_show_path
