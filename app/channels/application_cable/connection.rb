@@ -2,6 +2,7 @@ module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
 
+    # 接続してきたユーザーが許可するべきユーザーかどうか判定して、接続を確立
     def connect
       self.current_user = find_verified_user
       logger.add_tags 'ActionCable', current_user.email

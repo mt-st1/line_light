@@ -8,6 +8,7 @@ class MessageBroadcastJob < ApplicationJob
   private
 
   def render_message(message)
+    # コントローラー以外の場所でレンダリング
     ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
   end
 end

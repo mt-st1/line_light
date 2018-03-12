@@ -8,6 +8,7 @@
 (function() {
   this.App || (this.App = {});
 
+  // JSからActionCableへの接続
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
