@@ -1,6 +1,7 @@
 class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
+  # Messageモデルのデータがcreateされコミットが正常終了したあと、呼び出されブロードキャストする
   def perform(message)
     ActionCable.server.broadcast 'room_channel', message: render_message(message)
   end

@@ -4,21 +4,24 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
-  has_many :users, class_name: "Friend", foreign_key: :user_id, dependent: :destroy
-  has_many :friends_of_user, through: :users, source: 'target'
-  has_many :targets, class_name: "Friend", foreign_key: :target_id, dependent: :destroy
-  has_many :friends_of_target, through: :targets, source: 'user'
+  has_many :friendships_of_from, class_name: "Friend", foreign_key: :from_user_id, dependent: :destroy
+  has_many :friends_of_from_user, through: :friendships_of_from, source: 'to_user'
+  has_many :friendships_of_to, class_name: "Friend", foreign_key: :to_user_id, dependent: :destroy
+  has_many :friends_of_to_user, through: :friendships_of_to, source: 'from_user'
 
   def follow(target)
-    users.create(target_id: target.id)
+    Friend.create(from_user_id: self.id, to_user_id: target.id)
   end
 
   def block(target)
-    users.find_by(target_id: target.id).destroy
+    Friend.destroy(from_user_id: self.id, to_user_id: target.id)
   end
 
-  def friend?(target)
-    target_user = User.find_by(id: target.id)
-    friends_of_user.include?(target) && target_user.friends_of_target.include?(self)
+  def friend_with?(target)
+    if User.find_by(id: target.id)
+      self.friends_of_from_user.all.include?(target) && self.friends_of_to_user.all.include?(target)
+    else
+      flash[:error] = 'ユーザーが見つかりませんでした.'
+    end
   end
 end
