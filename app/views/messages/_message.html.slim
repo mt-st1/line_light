@@ -1,6 +1,7 @@
 div.message
-  a href="" class="message_username"
-    = message.user.email
+  a href="/users/#{message.user.id}" class="message_username"
+    = message.user.username
+  = "  "
   span.message_timestamp
     = message.created_at
   br

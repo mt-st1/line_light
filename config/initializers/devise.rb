@@ -225,7 +225,7 @@ Devise.setup do |config|
   # turn scoped views on. before rendering "sessions/new", it will first check for
   # "users/sessions/new". it's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # configure the default scope given to warden. by default it's the first
   # devise role declared in your routes (usually :user).
