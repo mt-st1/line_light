@@ -14,7 +14,7 @@ class User < ApplicationRecord
   end
 
   def block(target)
-    Friend.destroy(from_user_id: self.id, to_user_id: target.id)
+    Friend.find_by(from_user_id: self.id, to_user_id: target.id).destroy
   end
 
   def friend_with?(target)
