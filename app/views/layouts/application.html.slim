@@ -18,7 +18,9 @@ html
             li
               = link_to 'ユーザ一覧', users_path
             li
-              = link_to '友達フォロー', follow_path
+              = link_to '友達', user_friends_path(:user_id => current_user.id)
+            li
+              = link_to 'フォロー', follow_path
             li
               = link_to 'プロフィール編集', edit_user_registration_path
             li

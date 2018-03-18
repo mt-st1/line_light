@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!, only: [:home]
+  before_action :authenticate_user!, only: [:home, :follow, :follow_user]
   skip_before_filter :verify_authenticity_token
+
   def home
   end
 

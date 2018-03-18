@@ -17,6 +17,16 @@ class User < ApplicationRecord
     Friend.find_by(from_user_id: self.id, to_user_id: target.id).destroy
   end
 
+  def friends
+    friends = []
+    user  = self
+    self.friends_of_from_user do |follow_user|
+      if follow_user.friends_of_from_user.include?(user)
+        friends << follow_user
+      end
+    end
+  end
+
   def friend_with?(target)
     if User.find_by(id: target.id)
       self.friends_of_from_user.all.include?(target) && self.friends_of_to_user.all.include?(target)

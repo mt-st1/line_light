@@ -1,8 +1,7 @@
 class FriendsController < ApplicationController
   before_action :authenticate_user!
-  def create
-  end
 
-  def destroy
+  def index
+    @user = User.find(params[:user_id])
   end
 end

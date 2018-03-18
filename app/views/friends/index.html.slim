@@ -1,0 +1,5 @@
+- content_for :title, 'Frieends | LineLight'
+h2 #{@user.email}の友達
+
+- @user.friends.each do |friend|
+  p #{friend.email}
