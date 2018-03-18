@@ -30,8 +30,6 @@ class User < ApplicationRecord
   def friend_with?(target)
     if User.find_by(id: target.id)
       self.friends_of_from_user.all.include?(target) && self.friends_of_to_user.all.include?(target)
-    else
-      flash[:error] = 'ユーザーが見つかりませんでした.'
     end
   end
 end
