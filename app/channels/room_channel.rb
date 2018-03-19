@@ -1,7 +1,8 @@
 # サーバサイドの処理を受け持つチャンネル
 class RoomChannel < ApplicationCable::Channel
+  # コンシューマーがこのチャンネルの購読側になると呼び出される
   def subscribed
-    # チャンネル名を指定して接続
+    # チャンネル名を指定して接続(Roomチャンネルのストリーム監視)
     stream_from "room_channel"
   end
 
