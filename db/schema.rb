@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318095044) do
+ActiveRecord::Schema.define(version: 20180319080029) do
 
   create_table "friends", force: :cascade do |t|
     t.integer  "from_user_id"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20180318095044) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "personal_messages", force: :cascade do |t|
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
