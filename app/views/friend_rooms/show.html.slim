@@ -1,5 +1,5 @@
 - content_for :title, 'FriendRoom | LineLight'
-h1 Friend Room
+h2 Friend Room |#{@friend.to_user.username}|
 
 div id="personal_messages"
   - @personal_messages.each do |message|
