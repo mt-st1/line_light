@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'friend_rooms/show'
+
   get 'rooms/show'
 
   devise_for :users
