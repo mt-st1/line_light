@@ -2,5 +2,5 @@
 h2 #{@user.username}の友達
 
 - @user.friends.each do |friend|
-  p
-    = link_to "#{friend.username}", user_path(id: friend.id)
+  = link_to "#{friend.username}", user_path(id: friend.id)
+  = button_to "トーク", friend_room_path(id: Friend.find_by(from_user_id: @user.id, to_user_id: friend.id).id)

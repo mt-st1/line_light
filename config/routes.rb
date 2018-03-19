@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'friend_rooms/show'
-
   get 'rooms/show'
 
   devise_for :users
@@ -15,4 +13,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :friends, only: [:index]
   end
+
+  resources :friend_rooms, only: [:show]
 end
