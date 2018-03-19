@@ -1,2 +1,14 @@
 - content_for :title, 'FriendRoom | LineLight'
 h1 Friend Room
+
+div id="personal_messages"
+  - @personal_messages.each do |message|
+    - if @self_messages.include? message
+      = render partial: "personal_messages/self_message", locals: {self_message: message}
+    - elsif @friend_messages.include? message
+      = render partial: "personal_messages/friend_message", locals: {friend_message: message}
+
+form
+  label Say something:
+  br
+  input type="text" id="personal_message_input"

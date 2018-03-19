@@ -1,0 +1,9 @@
+div.friend_messages
+  a href="/users/#{friend_message.friend.from_user_id}" class="friend_message_username"
+    = friend_message.friend.from_user.username
+  = "  "
+  span.friend_message_timestamp
+    = friend_message.created_at
+  br
+  span.friend_message_content
+    = friend_message.content
