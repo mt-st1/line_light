@@ -7,6 +7,7 @@ $ ->
   $messages.scrollTop $messages.prop('scrollHeight')
   $('#message_input').focus()
 
+# message_inputというidをもった要素に対し
 # リターンキーが押されたときRoomチャンネルのspeakアクション実行
 $(document).on 'keypress', '#message_input', (event) ->
   if event.keyCode == 13 and event.target.value
