@@ -1,6 +1,7 @@
 - content_for :title, 'FriendRoom | LineLight'
 h2 Friend Room |#{@friend.to_user.username}|
 
+/カスタムデータ属性(data-*)でルームの情報を渡す
 #personal_messages data-room_id="#{@friend.id}"
   - @personal_messages.each do |message|
     - if @self_messages.include? message
