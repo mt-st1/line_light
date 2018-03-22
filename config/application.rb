@@ -6,8 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-config.assets.initialize_on_precompile = false
-
 module LineLight
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -16,5 +14,7 @@ module LineLight
 
     # デフォルトのテンプレートエンジンをslimに変更
     config.generators.template_engine = :slim
+
+    config.assets.initialize_on_precompile = false
   end
 end
