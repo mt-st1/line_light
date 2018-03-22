@@ -18,7 +18,7 @@ gem 'html2slim'
 gem 'devise'
 gem 'resque'
 gem 'resque-scheduler'
-gem 'redis'
+gem 'redis', "~> 3.0"
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
