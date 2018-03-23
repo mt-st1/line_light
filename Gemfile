@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'devise'
+gem 'cancancan'
+gem 'rails_admin'
 gem 'resque'
 gem 'resque-scheduler'
 gem 'redis', "~> 3.0"
