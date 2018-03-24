@@ -13,9 +13,13 @@ class StaticPagesController < ApplicationController
     begin
       if target = User.find_by(email: params[:email])
         if @user.follow target
-          redirect_to "/users/#{target.id}", notice: "#{target.email}をフォローしました"
+          if @user.friend_with?(target)
+            redirect_to "/users/#{target.id}", notice: "#{target.username}と友達になりました"
+          else
+            redirect_to action: 'follow', notice: "#{target.username}をフォローしました"
+          end
         else
-          redirect_to action: 'follow', alert: "#{target.email}をフォローできませんでした"
+          redirect_to action: 'follow', alert: "#{target.username}をフォローできませんでした"
         end
       else
         flash.now[:invalid] = '不正なメールアドレスです'
