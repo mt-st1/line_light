@@ -1,0 +1,8 @@
+- content_for :title, 'requested | LineLight'
+h2 友達リクエスト
+
+- current_user.requested_users.each do |user|
+  p
+    = "#{user.id}: "
+    = "#{user.username}"
+    = button_to "許可", follow_user_path(params: {email: user.email}), method: :post

@@ -16,7 +16,8 @@ class StaticPagesController < ApplicationController
           if @user.friend_with?(target)
             redirect_to "/users/#{target.id}", notice: "#{target.username}と友達になりました"
           else
-            redirect_to action: 'follow', notice: "#{target.username}をフォローしました"
+            flash.now[:notice] = "#{target.username}をフォローしました"
+            render :follow
           end
         else
           redirect_to action: 'follow', alert: "#{target.username}をフォローできませんでした"
@@ -29,5 +30,11 @@ class StaticPagesController < ApplicationController
       flash.now[:nonunique] = '既にフォローしているユーザです'
       render :follow
     end
+  end
+
+  def requesting
+  end
+
+  def requested
   end
 end

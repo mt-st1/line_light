@@ -20,17 +20,37 @@ class User < ApplicationRecord
 
   def friends
     friends = []
-    user  = self
-    self.friends_of_from_user do |follow_user|
-      if follow_user.friends_of_from_user.include?(user)
+    self.friends_of_from_user.each do |follow_user|
+      if follow_user.friends_of_from_user.include?(self)
         friends << follow_user
       end
     end
+    friends
   end
 
   def friend_with?(target)
     if User.find_by(id: target.id)
-      self.friends_of_from_user.all.include?(target) && self.friends_of_to_user.all.include?(target)
+      self.friends_of_from_user.include?(target) && self.friends_of_to_user.include?(target)
     end
+  end
+
+  def requesting_users
+    requesting_users = []
+    self.friends_of_from_user.each do |follow_user|
+      if not follow_user.friends_of_from_user.include?(self)
+        requesting_users << follow_user
+      end
+    end
+    requesting_users
+  end
+
+  def requested_users
+    requested_users = []
+    self.friends_of_to_user.each do |followed_user|
+      if not self.friends_of_from_user.include?(followed_user)
+        requested_users << followed_user
+      end
+    end
+    requested_users
   end
 end
