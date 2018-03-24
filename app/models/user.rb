@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
+  has_many :messages, dependent: :destroy
   has_many :friendships_of_from, class_name: "Friend", foreign_key: :from_user_id, dependent: :destroy
   has_many :friends_of_from_user, through: :friendships_of_from, source: 'to_user'
   has_many :friendships_of_to, class_name: "Friend", foreign_key: :to_user_id, dependent: :destroy
