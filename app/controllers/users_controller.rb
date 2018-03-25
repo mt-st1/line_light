@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if not current_user.admin_flg?
       if target = User.find_by(id: params[:id])
         if current_user == target
-          redirect_to home_path
+          redirect_to home_url
         elsif not current_user.friend_with?(target)
           begin
             redirect_to :back, :alert => '友達ではないユーザの情報は見れません'
@@ -35,6 +35,6 @@ class UsersController < ApplicationController
   end
 
   def redirect_to_user_friends
-    redirect_to user_friends_path(:user_id => current_user.id), :alert => '友達ではないユーザの情報は見れません'
+    redirect_to user_friends_url(:user_id => current_user.id), :alert => '友達ではないユーザの情報は見れません'
   end
 end

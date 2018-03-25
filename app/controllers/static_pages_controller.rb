@@ -32,6 +32,20 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def block_user
+    if target = User.find_by(email: params[:email])
+      target.block current_user
+      redirect_to requested_url, notice: "#{target.username}からのフォローを拒否しました"
+    end
+  end
+
+  def deep_block_user
+    if target = User.find_by(email: params[:email])
+      current_user.deep_block target
+      redirect_to user_friends_url(:user_id => current_user.id), notice: "#{target.username}をブロックしました"
+    end
+  end
+
   def requesting
   end
 

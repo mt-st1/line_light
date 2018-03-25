@@ -18,6 +18,11 @@ class User < ApplicationRecord
     Friend.find_by(from_user_id: self.id, to_user_id: target.id).destroy
   end
 
+  def deep_block(target)
+    self.block(target)
+    Friend.find_by(from_user_id: target.id, to_user_id: self.id).destroy
+  end
+
   def friends
     friends = []
     self.friends_of_from_user.each do |follow_user|
