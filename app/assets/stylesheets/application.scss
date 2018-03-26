@@ -1,2 +1,50 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// universal
+body {
+  padding-top: 50px;
+}
+
+section {
+  overflow: auto; // はみ出た部分の表示方法
+}
+
+textarea {
+  resize: vertical; // 縦のみリサイズ可能
+}
+
+// typography
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1; // 行間調節
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.2em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+// footer
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-light;
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 20px;
+    }
+  }
+}

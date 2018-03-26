@@ -18,11 +18,11 @@ class StaticPagesController < ApplicationController
           redirect_to action: 'follow', alert: "#{target.email}をフォローできませんでした"
         end
       else
-        flash.now[:invalid] = '不正なメールアドレスです'
+        flash.now[:alert] = '不正なメールアドレスです'
         render :follow
       end
     rescue ActiveRecord::RecordNotUnique
-      flash.now[:nonunique] = '既にフォローしているユーザです'
+      flash.now[:alert] = '既にフォローしているユーザです'
       render :follow
     end
   end

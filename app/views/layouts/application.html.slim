@@ -6,34 +6,12 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  body
-    header
-      nav
-        ul
-          - if user_signed_in?
-            li
-              = link_to 'ホーム', home_path
-            li
-              = link_to 'トークルーム', rooms_show_path
-            li
-              = link_to '友達', user_friends_path(:user_id => current_user.id)
-            li
-              = link_to 'フォロー', follow_path
-            li
-              = link_to 'プロフィール編集', edit_user_registration_path
-            li
-              = link_to 'ログアウト', destroy_user_session_path, method: :delete
-            - if current_user.admin_flg?
-              li
-                = link_to 'ユーザ一覧', users_path
-          - else
-            li
-              = link_to 'サインアップ', new_user_registration_path
-            li
-              = link_to 'ログイン', new_user_session_path
 
-    p.notice
-      = notice
-    p.alert
-      = alert
-    = yield
+  body
+    = render 'layouts/header'
+    div.container
+      - flash.each do |message_type, message|
+        div class=["alert", "alert_#{message_type}"]
+          = "#{message}"
+      = yield
+      = render 'layouts/footer'
