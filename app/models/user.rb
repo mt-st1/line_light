@@ -11,7 +11,9 @@ class User < ApplicationRecord
   has_many :friends_of_to_user, through: :friendships_of_to, source: 'from_user'
 
   def follow(target)
-    Friend.create(from_user_id: self.id, to_user_id: target.id)
+    if self.id != target.id
+      Friend.create(from_user_id: self.id, to_user_id: target.id)
+    end
   end
 
   def block(target)
