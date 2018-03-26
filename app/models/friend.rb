@@ -3,4 +3,5 @@ class Friend < ApplicationRecord
   belongs_to :to_user, class_name: "User"
   validates :from_user_id, presence: true
   validates :to_user_id, presence: true
+  has_many :personal_messages, dependent: :destroy
 end

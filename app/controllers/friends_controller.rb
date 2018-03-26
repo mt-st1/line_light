@@ -9,7 +9,7 @@ class FriendsController < ApplicationController
   private
   def private_user
     if not current_user == User.find_by(id: params[:user_id])
-      redirect_to user_friends_path(:user_id => current_user.id)
+      redirect_to user_friends_url(:user_id => current_user.id)
     end
   end
 end

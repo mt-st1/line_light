@@ -16,10 +16,10 @@ class FriendRoomsController < ApplicationController
   def private_user
     if @friend = Friend.find_by(id: params[:id])
       if not current_user == @friend.from_user
-        redirect_to user_friends_path(:user_id => current_user.id)
+        redirect_to user_friends_url(:user_id => current_user.id)
       end
     else
-      redirect_to user_friends_path(:user_id => current_user.id)
+      redirect_to user_friends_url(:user_id => current_user.id)
     end
   end
 end

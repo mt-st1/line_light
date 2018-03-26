@@ -1,0 +1,7 @@
+- content_for :title, 'requesting | LineLight'
+h2 友達申請中ユーザ
+
+- current_user.requesting_users.each do |user|
+  p
+    = "#{user.id}: "
+    = "#{user.username}"
