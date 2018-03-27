@@ -11,6 +11,8 @@ html
     = render 'layouts/header'
     div.container
       - flash.each do |message_type, message|
+        - if message_type == :timedout
+          next
         div class=["alert", "alert_#{message_type}"]
           = "#{message}"
       = yield
