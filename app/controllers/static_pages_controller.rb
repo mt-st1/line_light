@@ -20,7 +20,7 @@ class StaticPagesController < ApplicationController
             render :follow
           end
         else
-          redirect_to action: 'follow', alert: "自身はフォローできません"
+          redirect_to follow_url, alert: '自身はフォローできません'
         end
       else
         flash.now[:alert] = '不正なメールアドレスです'
