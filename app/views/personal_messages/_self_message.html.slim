@@ -3,7 +3,7 @@ div.self_message.bg-success
     = self_message.friend.from_user.username
   = "  "
   span.self_message_timestamp
-    = self_message.created_at
+    = simple_time(self_message.created_at)
   br
   span.self_message_content
     = self_message.content

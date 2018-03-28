@@ -3,7 +3,7 @@ div.message
     = message.user.username
   = "  "
   span.message_timestamp
-    = message.created_at
+    = simple_time(message.created_at)
   br
   span.message_content
     = message.content

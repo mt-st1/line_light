@@ -14,6 +14,10 @@ module LineLight
 
     # デフォルトのテンプレートエンジンをslimに変更
     config.generators.template_engine = :slim
+    # Timezoneを日本時間に変更
+    config.time_zone = 'Tokyo'
+    # ActiveRecord使用時にDBに書かれる時刻も日本時間に
+    config.active_record.default_timezone = :local
 
     config.assets.initialize_on_precompile = false
   end
