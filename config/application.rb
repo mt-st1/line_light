@@ -18,6 +18,8 @@ module LineLight
     config.time_zone = 'Tokyo'
     # ActiveRecord使用時にDBに書かれる時刻も日本時間に
     config.active_record.default_timezone = :local
+    # deviseの日本語化
+    config.i18n.default_locale = :ja
 
     config.assets.initialize_on_precompile = false
   end

@@ -37,10 +37,10 @@ h2
     br
     = f.password_field :current_password, autocomplete: "off"
   .actions
-    = f.submit "Update"
+    = f.submit "更新"
 h3
   | Delete Account
 p
   | Unhappy? 
-  = button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+  = button_to "アカウント消去", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+= link_to "戻る", :back
