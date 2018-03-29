@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!, only: [:home, :follow, :follow_user]
+  before_action :authenticate_user!, only: [:home, :follow, :follow_user, :block_user, :deep_block_user]
   skip_before_filter :verify_authenticity_token
+
+  def index
+  end
 
   def home
   end
@@ -44,11 +47,5 @@ class StaticPagesController < ApplicationController
       current_user.deep_block target
       redirect_to user_friends_url(:user_id => current_user.id), notice: "#{target.username}をブロックしました"
     end
-  end
-
-  def requesting
-  end
-
-  def requested
   end
 end

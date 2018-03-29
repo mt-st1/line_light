@@ -11,10 +11,22 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def requesting
+    if not current_user == User.find_by(id: params[:user_id])
+      redirect_to user_requesting_url(:user_id => current_user.id)
+    end
+  end
+
+  def requested
+    if not current_user == User.find_by(id: params[:user_id])
+      redirect_to user_requested_url(:user_id => current_user.id)
+    end
+  end
+
   private
   def admin_user
     if not current_user.admin_flg?
-      redirect_to user_path(:id => current_user.id), :alert => '管理者権限がありません'
+      redirect_to user_url(:id => current_user.id), :alert => '管理者権限がありません'
     end
   end
 
