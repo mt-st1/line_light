@@ -12,13 +12,13 @@ class UsersController < ApplicationController
   end
 
   def requesting
-    if not current_user == User.find_by(id: params[:user_id])
+    if not current_user == @user = User.find_by(id: params[:user_id])
       redirect_to user_requesting_url(:user_id => current_user.id)
     end
   end
 
   def requested
-    if not current_user == User.find_by(id: params[:user_id])
+    if not current_user == @user = User.find_by(id: params[:user_id])
       redirect_to user_requested_url(:user_id => current_user.id)
     end
   end

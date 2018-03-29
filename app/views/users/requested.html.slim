@@ -1,7 +1,7 @@
 - content_for :title, 'requested | LineLight'
 h2 友達リクエスト
 
-- current_user.requested_users.each do |user|
+- @user.requested_users.each do |user|
   p
     = "#{user.id}: "
     = "#{user.username}"
