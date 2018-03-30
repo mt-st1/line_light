@@ -1,14 +1,8 @@
 - content_for :title, "Follow | LineLight"
 h2 Follow User
 
-/- if flash[:invalid]
-/  div class="alert alert-invalid"
-/    = flash[:invalid]
-/- if flash[:nonunique]
-/  div class="alert alert-nonunique"
-/    = flash[:nonunique]
-
 form method="post" action="/follow_user"
-  p email:
+  label email:
+  br
   input type="text" name="email"
   input type="submit" value="フォロー"
