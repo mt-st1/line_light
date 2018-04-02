@@ -21,6 +21,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'cancancan'
 gem 'rails_admin'
+gem 'data-confirm-modal'
 gem 'resque'
 gem 'resque-scheduler'
 gem 'redis', "~> 3.0"

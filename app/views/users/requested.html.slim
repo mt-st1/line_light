@@ -5,5 +5,7 @@ h2 友達リクエスト
   p
     = "#{user.id}: "
     = "#{user.username}"
-    = button_to "許可", follow_user_path(params: {email: user.email}), method: :post
-    = button_to "ブロック", block_user_path(params: {email: user.email})
+    = button_to "承認", follow_user_path(params: {email: user.email}), method: :post
+    = button_to "拒否", block_user_path(params: {email: user.email}), data: {confirm: "本当に「#{user.username}」からのリクエストを拒否しますか？",
+      cancel: "やめる",
+      commit: "拒否する"}, title: "リクエスト拒否の確認"

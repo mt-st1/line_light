@@ -19,7 +19,7 @@ class StaticPagesController < ApplicationController
           if @user.friend_with?(target)
             redirect_to "/users/#{target.id}", notice: "#{target.username}と友達になりました"
           else
-            flash.now[:notice] = "#{target.username}をフォローしました"
+            flash.now[:notice] = "#{target.username}に友達申請しました"
             render :follow
           end
         else
@@ -38,7 +38,7 @@ class StaticPagesController < ApplicationController
   def block_user
     if target = User.find_by(email: params[:email])
       target.block current_user
-      redirect_to requested_url, notice: "#{target.username}からのフォローを拒否しました"
+      redirect_to user_requested_url(:user_id => current_user.id), notice: "#{target.username}からのリクエストを拒否しました"
     end
   end
 
