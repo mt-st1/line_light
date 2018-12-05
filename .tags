@@ -1,0 +1,108 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Ability	app/models/ability.rb	/^class Ability$/;"	c
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddAdminFlgToUser	db/migrate/20180323100716_add_admin_flg_to_user.rb	/^class AddAdminFlgToUser < ActiveRecord::Migration[5.0]$/;"	c
+AddFriendToPersonalMessages	db/migrate/20180319081929_add_friend_to_personal_messages.rb	/^class AddFriendToPersonalMessages < ActiveRecord::Migration[5.0]$/;"	c
+AddUserToMessages	db/migrate/20180301154736_add_user_to_messages.rb	/^class AddUserToMessages < ActiveRecord::Migration[5.0]$/;"	c
+AddUsernameToUsers	db/migrate/20180318095044_add_username_to_users.rb	/^class AddUsernameToUsers < ActiveRecord::Migration[5.0]$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:LineLight
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+CreateFriends	db/migrate/20180302182304_create_friends.rb	/^class CreateFriends < ActiveRecord::Migration[5.0]$/;"	c
+CreateMessages	db/migrate/20180301094415_create_messages.rb	/^class CreateMessages < ActiveRecord::Migration[5.0]$/;"	c
+CreatePersonalMessages	db/migrate/20180319080029_create_personal_messages.rb	/^class CreatePersonalMessages < ActiveRecord::Migration[5.0]$/;"	c
+DeviseCreateUsers	db/migrate/20180224054238_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration[5.0]$/;"	c
+Friend	app/models/friend.rb	/^class Friend < ApplicationRecord$/;"	c
+FriendRoomChannel	app/channels/friend_room_channel.rb	/^class FriendRoomChannel < ApplicationCable::Channel$/;"	c
+FriendRoomsController	app/controllers/friend_rooms_controller.rb	/^class FriendRoomsController < ApplicationController$/;"	c
+FriendRoomsControllerTest	test/controllers/friend_rooms_controller_test.rb	/^class FriendRoomsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+FriendRoomsHelper	app/helpers/friend_rooms_helper.rb	/^module FriendRoomsHelper$/;"	m
+FriendTest	test/models/friend_test.rb	/^class FriendTest < ActiveSupport::TestCase$/;"	c
+FriendsController	app/controllers/friends_controller.rb	/^class FriendsController < ApplicationController$/;"	c
+FriendsControllerTest	test/controllers/friends_controller_test.rb	/^class FriendsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+FriendsHelper	app/helpers/friends_helper.rb	/^module FriendsHelper$/;"	m
+LineLight	config/application.rb	/^module LineLight$/;"	m
+Message	app/models/message.rb	/^class Message < ApplicationRecord$/;"	c
+MessageBroadcastJob	app/jobs/message_broadcast_job.rb	/^class MessageBroadcastJob < ApplicationJob$/;"	c
+MessageBroadcastJobTest	test/jobs/message_broadcast_job_test.rb	/^class MessageBroadcastJobTest < ActiveJob::TestCase$/;"	c
+MessageTest	test/models/message_test.rb	/^class MessageTest < ActiveSupport::TestCase$/;"	c
+PersonalMessage	app/models/personal_message.rb	/^class PersonalMessage < ApplicationRecord$/;"	c
+PersonalMessageBroadcastJob	app/jobs/personal_message_broadcast_job.rb	/^class PersonalMessageBroadcastJob < ApplicationJob$/;"	c
+PersonalMessageBroadcastJobTest	test/jobs/personal_message_broadcast_job_test.rb	/^class PersonalMessageBroadcastJobTest < ActiveJob::TestCase$/;"	c
+PersonalMessageTest	test/models/personal_message_test.rb	/^class PersonalMessageTest < ActiveSupport::TestCase$/;"	c
+RoomChannel	app/channels/room_channel.rb	/^class RoomChannel < ApplicationCable::Channel$/;"	c
+RoomsController	app/controllers/rooms_controller.rb	/^class RoomsController < ApplicationController$/;"	c
+RoomsControllerTest	test/controllers/rooms_controller_test.rb	/^class RoomsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+RoomsHelper	app/helpers/rooms_helper.rb	/^module RoomsHelper$/;"	m
+StaticPagesController	app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
+StaticPagesControllerTest	test/controllers/static_pages_controller_test.rb	/^class StaticPagesControllerTest < ActionDispatch::IntegrationTest$/;"	c
+StaticPagesHelper	app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
+User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+UserTest	test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersControllerTest	test/controllers/users_controller_test.rb	/^class UsersControllerTest < ActionDispatch::IntegrationTest$/;"	c
+UsersHelper	app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+admin_user	app/controllers/users_controller.rb	/^  def admin_user$/;"	f	class:UsersController
+block	app/models/user.rb	/^  def block(target)$/;"	f	class:User
+block_user	app/controllers/static_pages_controller.rb	/^  def block_user$/;"	f	class:StaticPagesController
+change	db/migrate/20180224054238_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+change	db/migrate/20180301094415_create_messages.rb	/^  def change$/;"	f	class:CreateMessages
+change	db/migrate/20180301154736_add_user_to_messages.rb	/^  def change$/;"	f	class:AddUserToMessages
+change	db/migrate/20180302182304_create_friends.rb	/^  def change$/;"	f	class:CreateFriends
+change	db/migrate/20180318095044_add_username_to_users.rb	/^  def change$/;"	f	class:AddUsernameToUsers
+change	db/migrate/20180319080029_create_personal_messages.rb	/^  def change$/;"	f	class:CreatePersonalMessages
+change	db/migrate/20180319081929_add_friend_to_personal_messages.rb	/^  def change$/;"	f	class:AddFriendToPersonalMessages
+change	db/migrate/20180323100716_add_admin_flg_to_user.rb	/^  def change$/;"	f	class:AddAdminFlgToUser
+configure_permitted_parameters	app/controllers/application_controller.rb	/^  def configure_permitted_parameters$/;"	f	class:ApplicationController
+connect	app/channels/application_cable/connection.rb	/^    def connect$/;"	f	class:ApplicationCable.Connection
+deep_block	app/models/user.rb	/^  def deep_block(target)$/;"	f	class:User
+deep_block_user	app/controllers/static_pages_controller.rb	/^  def deep_block_user$/;"	f	class:StaticPagesController
+find_verified_user	app/channels/application_cable/connection.rb	/^    def find_verified_user$/;"	f	class:ApplicationCable.Connection
+follow	app/controllers/static_pages_controller.rb	/^  def follow$/;"	f	class:StaticPagesController
+follow	app/models/user.rb	/^  def follow(target)$/;"	f	class:User
+follow_user	app/controllers/static_pages_controller.rb	/^  def follow_user$/;"	f	class:StaticPagesController
+friend_user	app/controllers/users_controller.rb	/^  def friend_user$/;"	f	class:UsersController
+friend_with?	app/models/user.rb	/^  def friend_with?(target)$/;"	f	class:User
+friends	app/models/user.rb	/^  def friends$/;"	f	class:User
+home	app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+index	app/controllers/friends_controller.rb	/^  def index$/;"	f	class:FriendsController
+index	app/controllers/static_pages_controller.rb	/^  def index$/;"	f	class:StaticPagesController
+initialize	app/models/ability.rb	/^  def initialize(user)$/;"	f	class:Ability
+perform	app/jobs/message_broadcast_job.rb	/^  def perform(message)$/;"	f	class:MessageBroadcastJob
+perform	app/jobs/personal_message_broadcast_job.rb	/^  def perform(personal_message)$/;"	f	class:PersonalMessageBroadcastJob
+private_user	app/controllers/friend_rooms_controller.rb	/^  def private_user$/;"	f	class:FriendRoomsController
+private_user	app/controllers/friends_controller.rb	/^  def private_user$/;"	f	class:FriendsController
+redirect_to_user_friends	app/controllers/users_controller.rb	/^  def redirect_to_user_friends$/;"	f	class:UsersController
+render_friend_message	app/jobs/personal_message_broadcast_job.rb	/^  def render_friend_message(personal_message)$/;"	f	class:PersonalMessageBroadcastJob
+render_message	app/jobs/message_broadcast_job.rb	/^  def render_message(message)$/;"	f	class:MessageBroadcastJob
+render_self_message	app/jobs/personal_message_broadcast_job.rb	/^  def render_self_message(personal_message)$/;"	f	class:PersonalMessageBroadcastJob
+requested	app/controllers/users_controller.rb	/^  def requested$/;"	f	class:UsersController
+requested_users	app/models/user.rb	/^  def requested_users$/;"	f	class:User
+requesting	app/controllers/users_controller.rb	/^  def requesting$/;"	f	class:UsersController
+requesting_users	app/models/user.rb	/^  def requesting_users$/;"	f	class:User
+setup	test/controllers/static_pages_controller_test.rb	/^  def setup$/;"	f	class:StaticPagesControllerTest
+show	app/controllers/friend_rooms_controller.rb	/^  def show$/;"	f	class:FriendRoomsController
+show	app/controllers/rooms_controller.rb	/^  def show$/;"	f	class:RoomsController
+show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+show_all	app/controllers/users_controller.rb	/^  def show_all$/;"	f	class:UsersController
+simple_time	app/helpers/application_helper.rb	/^  def simple_time(time)$/;"	f	class:ApplicationHelper
+speak	app/channels/friend_room_channel.rb	/^  def speak(data)$/;"	f	class:FriendRoomChannel
+speak	app/channels/room_channel.rb	/^  def speak(data)$/;"	f	class:RoomChannel
+subscribed	app/channels/friend_room_channel.rb	/^  def subscribed$/;"	f	class:FriendRoomChannel
+subscribed	app/channels/room_channel.rb	/^  def subscribed$/;"	f	class:RoomChannel
+system!	bin/setup	/^def system!(*args)$/;"	f
+system!	bin/update	/^def system!(*args)$/;"	f
+unsubscribed	app/channels/friend_room_channel.rb	/^  def unsubscribed$/;"	f	class:FriendRoomChannel
+unsubscribed	app/channels/room_channel.rb	/^  def unsubscribed$/;"	f	class:RoomChannel
