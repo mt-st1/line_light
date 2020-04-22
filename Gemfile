@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.6.5'
+
 gem 'rails',        '5.0.3'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
@@ -57,4 +59,5 @@ group :development, :test do
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
