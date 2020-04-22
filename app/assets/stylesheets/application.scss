@@ -1,12 +1,12 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 // universal
 body {
   padding-top: 50px;
   display: flex;
   flex-direction: column;
-  min-height: 95vh;
+  min-height: 97vh;
 }
 
 section {
@@ -19,7 +19,12 @@ textarea {
 
 // typography
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1; // 行間調節
 }
 
@@ -64,9 +69,13 @@ h2 {
 footer {
   margin-top: auto;
   border-top: 1px solid $gray-light;
+  .container {
+    margin-top: 10px;
+  }
   ul {
     float: right;
     list-style: none;
+    font-size: medium;
     li {
       float: left;
       margin-left: 20px;

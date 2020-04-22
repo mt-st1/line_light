@@ -4,22 +4,18 @@ header class=["nav", "navbar-fixed-top", "navbar-inverse"]
     nav
       ul class=["nav", "navbar-nav", "navbar-right"]
         - if user_signed_in?
-          li
-            = link_to 'ホーム', home_path
-          li
-            = link_to 'トークルーム', rooms_show_path
-          li
-            = link_to '友達', user_friends_path(:user_id => current_user.id)
-          li
-            = link_to 'フォロー', follow_path
-          li
-            = link_to '友達申請中', user_requesting_path(:user_id => current_user.id)
-          li.count
-            = current_user.requesting_users.count
-          li
-            = link_to '友達リクエスト', user_requested_path(:user_id => current_user.id)
-          li.count
-            = current_user.requested_users.count
+          li class="nav-item #{'active' if controller.controller_name == 'static_pages' && controller.action_name == 'home'}"
+            = link_to 'ホーム', home_path, class: "nav-link"
+          li class="nav-item #{'active' if controller.controller_name == 'rooms' && controller.action_name == 'show'}"
+            = link_to 'トークルーム', rooms_show_path, class: "nav-link"
+          li class="nav-item #{'active' if controller.controller_name == 'friends' && controller.action_name == 'index'}"
+            = link_to '友達', user_friends_path(:user_id => current_user.id), class: "nav-link"
+          li class="nav-item #{'active' if controller.controller_name == 'static_pages' && controller.action_name == 'follow'}"
+            = link_to 'フォロー', follow_path, class: "nav-link"
+          li class="nav-item #{'active' if controller.controller_name == 'users' && controller.action_name == 'requesting'}"
+            = link_to "友達申請中 (#{current_user.requesting_users.count})", user_requesting_path(:user_id => current_user.id), class: "nav-link"
+          li class="nav-item #{'active' if controller.controller_name == 'users' && controller.action_name == 'requested'}"
+            = link_to "友達リクエスト (#{current_user.requested_users.count})", user_requested_path(:user_id => current_user.id), class: "nav-link"
         - else
           li
             = link_to 'サインアップ', new_user_registration_path
