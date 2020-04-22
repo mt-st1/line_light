@@ -4,6 +4,9 @@
 // universal
 body {
   padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
 }
 
 section {
@@ -59,8 +62,7 @@ h2 {
 // footer
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
+  margin-top: auto;
   border-top: 1px solid $gray-light;
   ul {
     float: right;
