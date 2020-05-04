@@ -1,5 +1,20 @@
-- content_for :title, 'Info | LineLight'
-h2 Information
-= "UserName: #{current_user.username}"
-br
-= "Email: #{current_user.email}"
+- content_for :title, 'ホーム | LineLight'
+.self-info-area
+  h2 ホーム
+  .self-info
+    = "ユーザ名: #{current_user.username}"
+    br
+    = "メールアドレス: #{current_user.email}"
+
+.friends-info-area
+  h3 友達 (#{current_user.friends.count}人)
+  ul.friends-list
+    - current_user.friends.each do |friend|
+      li.friend-item
+        .friend-info
+          h4 = link_to "#{friend.username} (#{friend.email})", user_path(id: friend.id), class: "friend-link"
+          = button_to "トーク", friend_room_path(id: Friend.find_by(from_user_id: current_user.id, to_user_id: friend.id).id), {method: :get, class: "btn btn-success talk-button"}
+          = button_to "ブロック", deep_block_user_path(params: {email: friend.email}), data: {confirm: "本当に「#{friend.username}」をブロックしますか？",
+                  cancel: "やめる",
+                  commit: "ブロックする"}, title: "ブロックの確認",
+                  class: "btn btn-danger block-button"

@@ -1,3 +1,31 @@
 // Place all the styles related to the Rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.messages_area, .personal_messages_area {
+  max-height: 550px;
+  overflow: scroll;
+  padding: 0 10px;
+}
+
+.self_message, .other_message, .friend_message {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.self_message {
+  border-radius: 20px 20px 0 20px;
+  margin-left: 70%;
+}
+
+.other_message, .friend_message {
+  border-radius: 20px 20px 20px 0;
+  background-color: silver;
+  margin-right: 70%;
+}
+
+.message_form, .personal_message_form {
+  position: fixed;
+  bottom: 12%;
+  margin-left: 10px;
+}

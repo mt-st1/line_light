@@ -1,3 +1,25 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.requesting-info-area, .requested-info-area {
+  margin-top: 20px;
+
+  .requesting-info, .requested-info {
+    font-size: large;
+  }
+
+  .requested-row {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 600px;
+
+    .approve-button {
+      margin-right: 10px;
+    }
+
+    &>:first-child {
+      margin-right: auto;
+    }
+  }
+}

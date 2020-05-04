@@ -1,7 +1,12 @@
-- content_for :title, 'requesting | LineLight'
+- content_for :title, '友達申請中ユーザ | LineLight'
 h2 友達申請中ユーザ
 
-- @user.requesting_users.each do |user|
-  p
-    = "#{user.id}: "
-    = "#{user.username}"
+.requesting-info-area
+  - if @user.requesting_users.count == 0
+    h4 友達申請中のユーザはいません
+  - else
+    ul.requesting-list
+      - @user.requesting_users.each do |user|
+        li.requesting-item
+          .requesting-info
+            = "#{user.username} (#{user.email})"

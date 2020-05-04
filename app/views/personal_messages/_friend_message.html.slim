@@ -1,6 +1,7 @@
 div.friend_message
-  a href="/users/#{friend_message.friend.from_user_id}" class="friend_message_username"
-    = friend_message.friend.from_user.username
+  strong
+    a href="/users/#{friend_message.friend.from_user_id}" class="friend_message_username"
+      = friend_message.friend.from_user.username
   = "  "
   span.friend_message_timestamp
     = simple_time(friend_message.created_at)

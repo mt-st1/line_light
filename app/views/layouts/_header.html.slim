@@ -1,4 +1,4 @@
-header class=["nav", "navbar-fixed-top", "navbar-inverse"]
+header class=["nav", "navbar-inverse"]
   div.container
     = link_to 'Line Light', root_path, id: 'logo'
     nav
@@ -7,9 +7,7 @@ header class=["nav", "navbar-fixed-top", "navbar-inverse"]
           li class="nav-item #{'active' if controller.controller_name == 'static_pages' && controller.action_name == 'home'}"
             = link_to 'ホーム', home_path, class: "nav-link"
           li class="nav-item #{'active' if controller.controller_name == 'rooms' && controller.action_name == 'show'}"
-            = link_to 'トークルーム', rooms_show_path, class: "nav-link"
-          li class="nav-item #{'active' if controller.controller_name == 'friends' && controller.action_name == 'index'}"
-            = link_to '友達', user_friends_path(:user_id => current_user.id), class: "nav-link"
+            = link_to 'チャットルーム', rooms_show_path, class: "nav-link"
           li class="nav-item #{'active' if controller.controller_name == 'static_pages' && controller.action_name == 'follow'}"
             = link_to 'フォロー', follow_path, class: "nav-link"
           li class="nav-item #{'active' if controller.controller_name == 'users' && controller.action_name == 'requesting'}"

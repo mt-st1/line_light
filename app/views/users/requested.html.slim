@@ -1,11 +1,18 @@
-- content_for :title, 'requested | LineLight'
+- content_for :title, '友達リクエスト | LineLight'
 h2 友達リクエスト
 
-- @user.requested_users.each do |user|
-  p
-    = "#{user.id}: "
-    = "#{user.username}"
-    = button_to "承認", follow_user_path(params: {email: user.email}), method: :post
-    = button_to "拒否", block_user_path(params: {email: user.email}), data: {confirm: "本当に「#{user.username}」からのリクエストを拒否しますか？",
-      cancel: "やめる",
-      commit: "拒否する"}, title: "リクエスト拒否の確認"
+.requested-info-area
+  - if @user.requested_users.count == 0
+    h4 友達リクエストはありません
+  - else
+    ul.requested-list
+      - @user.requested_users.each do |user|
+        li.requested-item
+          .requested-row
+            .requested-info
+              = "#{user.username} (#{user.email})"
+            = button_to "承認", follow_user_path(params: {email: user.email}), method: :post, class: "btn btn-success approve-button"
+            = button_to "拒否", block_user_path(params: {email: user.email}), data: {confirm: "本当に「#{user.username}」からのリクエストを拒否しますか？",
+              cancel: "やめる",
+              commit: "拒否する"}, title: "リクエスト拒否の確認",
+              class: "btn btn-danger reject-button"

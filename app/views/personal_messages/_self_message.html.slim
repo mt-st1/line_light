@@ -1,6 +1,7 @@
 div.self_message.bg-success
-  a href="/users/#{self_message.friend.from_user_id}" class="self_message_username"
-    = self_message.friend.from_user.username
+  strong
+    a href="/users/#{self_message.friend.from_user_id}" class="self_message_username"
+      = self_message.friend.from_user.username
   = "  "
   span.self_message_timestamp
     = simple_time(self_message.created_at)

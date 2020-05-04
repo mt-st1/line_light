@@ -1,4 +1,4 @@
-div.message
+div class=(message.user.id == current_user.id ? "self_message bg-success" : "other_message")
   a href="/users/#{message.user.id}" class="message_username"
     = message.user.username
   = "  "
