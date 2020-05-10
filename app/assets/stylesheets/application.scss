@@ -9,6 +9,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 97vh;
+  .body_container {
+    margin-bottom: 20px;
+  }
 }
 
 section {

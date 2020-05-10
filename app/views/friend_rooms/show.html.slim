@@ -10,7 +10,8 @@ h2 #{@friend.to_user.username}とのトークルーム
       - elsif @friend_messages.include? message
         = render partial: "personal_messages/friend_message", locals: {friend_message: message}
 
-  form.personal_message_form
-    label Say something:
-    br
-    input type="text" id="personal_message_input" placeholder="メッセージを入力"
+  .form_area
+    form.personal_message_form
+      label Say something:
+      br
+      input type="text" id="personal_message_input" placeholder="メッセージを入力"

@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.chat-container {
+  margin-top: 20px;
+}
+
 .messages_area, .personal_messages_area {
-  max-height: 550px;
+  height: 70vh;
   overflow: scroll;
   padding: 0 10px;
 }
@@ -24,8 +28,7 @@
   margin-right: 70%;
 }
 
-.message_form, .personal_message_form {
-  position: fixed;
-  bottom: 12%;
+.form_area {
+  bottom: 10%;
   margin-left: 10px;
 }

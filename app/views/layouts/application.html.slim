@@ -9,7 +9,7 @@ html
 
   body
     = render 'layouts/header'
-    div.container
+    div.container.body_container
       - flash.each do |message_type, message|
         - if message_type == :timedout
           next
